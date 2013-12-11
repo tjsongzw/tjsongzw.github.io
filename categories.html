@@ -5,7 +5,7 @@
     <title>Pre Intellection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Zhongwen Song">
+    <meta name="author" content="songzw">
 
     <!-- Le styles -->
     <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css" />
@@ -47,7 +47,37 @@
     <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
 
     <link href="./" type="application/atom+xml" rel="alternate" title="Pre Intellection ATOM Feed" />
-    
+
+    <!-- Using MathJax, with the delimiters $ -->
+    <!-- Conflict with pygments for the .mo and .mi -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+      styles: {
+      ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+      },
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],processEscapes: true}
+      });
+      MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+      var VARIANT = MathJax.OutputJax["HTML-CSS"].FONTDATA.VARIANT;
+      VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+      VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+      VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+      VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+      });
+      MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+      var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+      VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+      VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+      VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+      VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+      });
+    </script>
+
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </script>
+
   </head>
 
   <body>
@@ -63,8 +93,12 @@
           <a class="brand" href="./index.html">Pre Intellection </a>
           <div class="nav-collapse">
             <ul class="nav">
-                                                                    <li class="divider-vertical"></li>
-                            
+                  <li >
+                    <a href="./category/misc">
+						<i class="icon-folder-open icon-large"></i>misc
+					</a>
+                  </li>
+
                           <ul class="nav pull-right">
                                 <li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
                           </ul>
@@ -79,14 +113,20 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-            <ul>
+<ul>
+	<li><a href="category/misc">misc</a></li>
 </ul>
         </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">
-            <ul class="nav nav-list">
+<ul class="nav nav-list">
 
 <li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="./category/misc">
+    <i class="icon-folder-open icon-large"></i>misc
+</a>
+</li>
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
@@ -110,8 +150,17 @@
     </div><!--/.fluid-container-->
 
 
-            <script type="text/javascript">
-    var disqus_shortname = 'blog-songzw';
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+	var pageTracker = _gat._getTracker("UA-XXXX-YYYY");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+    var disqus_shortname = 'preintellection';
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
