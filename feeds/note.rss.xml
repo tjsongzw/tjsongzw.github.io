@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pre Intellection</title><link>http://tjsongzw.github.io/</link><description></description><atom:link href="http://tjsongzw.github.io/feeds/note.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 21 Dec 2013 00:00:00 +0100</lastBuildDate><item><title>Gaussian Processing</title><link>http://tjsongzw.github.io/posts/note/gaussian-processing</link><description>&lt;blockquote&gt;
+&lt;p&gt;for any set $S$, a Gaussian Processing(GP) on $S$ is a set of $r.v.s$ ($Z_t : t \in S$)
+$s.t.$ $\forall t_1, t_2, \cdots, t_n \in S$
+$(Z_{t_1}, Z_{t_2}, \cdots, Z_{t_n})$ is a (multivariate) Gaussian&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Existence of Gaussian Processing&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For any set $S$, any mean $f_n, \mu: S \rightarrow \mathbb{R}$, and any covariance $f_n$, $\mathcal{K}: S \times S \rightarrow \mathbb{R}$,
+there exists a $GP(Z_t)$, s.t. $\mathrm{E}[Z_t] = \mu$, $\mathrm{Cov}(Z_s, Z_t) = \kappa(s, t)$, $\forall s, t \in S$&lt;/p&gt;
+&lt;!-- &gt; $\underbrace{(Z\_t\_1, Z\_t\_2, \cdots, Z\_t\_n)}\_{\text{f.d.d.s, finite dimension distributions}}$ is a (multivariate) Gaussian --&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">songzw</dc:creator><pubDate>Sat, 21 Dec 2013 00:00:00 +0100</pubDate><guid>tag:tjsongzw.github.io,2013-12-21:posts/note/gaussian-processing</guid></item><item><title>Exponential Families</title><link>http://tjsongzw.github.io/posts/note/exponential-families</link><description>&lt;h4&gt;not EF&lt;/h4&gt;
+&lt;p&gt;$$Uniform(0, \theta)$$&lt;/p&gt;
+&lt;h4&gt;property&lt;/h4&gt;
+&lt;p&gt;the gradient of the log of the partition function is the expectation of sufficient statistics
+$$\nabla_\theta log Z(\theta) = \mathbb{E}_\theta[s(X)]$$
+$$\mathbb{E}_{\theta_{MLE}}[S(X)] = \frac{1}{n}\sum_{i=1}^{n}s(x_i) $$&lt;/p&gt;
+&lt;h4&gt;priors&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;non-informative prior&lt;/li&gt;
+&lt;li&gt;improper prior(not a distribution), i.e., $p(\theta) = 1$&lt;/li&gt;
+&lt;li&gt;conjugate prior&lt;ul&gt;
+&lt;li&gt;any exponential family has a conjugate prior&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">songzw</dc:creator><pubDate>Fri, 20 Dec 2013 00:00:00 +0100</pubDate><guid>tag:tjsongzw.github.io,2013-12-20:posts/note/exponential-families</guid></item><item><title>Statistics</title><link>http://tjsongzw.github.io/posts/note/statistics</link><description>&lt;h3&gt;Definition&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;Assume $D = (X_1, X_2, \cdots, X_n)$ and  $X_i$ is a $r.v.$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;statistics&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A statistic is a r.v. $S$ that a $f$ of the data $D$, i.e., $S = f(D)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;estimator&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;An estimator is a statistic intended to approximate a parameter governing the distribution of the data D.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;notation&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\hat{\theta}$ denotes a estimator of $\theta$.&lt;/li&gt;
+&lt;li&gt;$\hat{\theta}_n$ emphasizes $n$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;bias,unbiased&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the bias of an estimator $\hat{\theta}$ is bias($\hat{\theta}$) = $\mathbb{E}[\theta] - \theta$&lt;/li&gt;
+&lt;li&gt;an estimator is unbiased if bias($\hat{\theta}$) = 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Assume $D = (X_1, X_2, \cdots, X_n)$ and  $X_i$ is a $r.v.$, and %D ~ p_\theta$, $\theta ~ \pi$, $\hat{\theta} = f(D) = \delta(D)$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;loss&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$L(\theta, f(D))$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;bayesian expected loss&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;avg over $\theta$, $L(\theta, f(D)|D) = \rho(\pi, f(D))$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;frequentist risk(risk)&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;avg over $D$, $L(\theta, f(D)|\theta) = R(\theta, f)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;bayes risk&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathbb{E}[L(\theta, f(D))] = r(\pi, f)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;in bayes-world, the $D$ is known, while in the risk-world, the $\pi$ is unknown.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;bayesian&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;assume a $\pi$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;know $D$, choose $f(D)$ to minimize $\rho(\pi, f(D))$&lt;/li&gt;
+&lt;li&gt;don't know $D$, choose $f$ to minimize $r(\pi, f)$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;frequentist&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;introduce a further principle to guide the your choice&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;unbiasedness&lt;/li&gt;
+&lt;li&gt;admissibility&lt;/li&gt;
+&lt;li&gt;minmax&lt;/li&gt;
+&lt;li&gt;invariance&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">songzw</dc:creator><pubDate>Fri, 20 Dec 2013 00:00:00 +0100</pubDate><guid>tag:tjsongzw.github.io,2013-12-20:posts/note/statistics</guid></item><item><title>Information Theory</title><link>http://tjsongzw.github.io/posts/note/information-theory</link><description>&lt;hr /&gt;
+&lt;h3&gt;big picture&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Compression(efficiency)&lt;/th&gt;
+&lt;th&gt;Error-Correction(reliability)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;"source coding"&lt;/td&gt;
+&lt;td&gt;"channel coding"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;--------------------&lt;/td&gt;
+&lt;td&gt;---------------------------&lt;/td&gt;
+&lt;td&gt;--------------------------------&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Information Theory&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;loss less&lt;/strong&gt;:&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(math)&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;source coding theorem&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;noisy channel coding theorem&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Kraft-Mcmillan inequality&lt;/td&gt;
+&lt;td&gt;channel capacity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;lossy&lt;/strong&gt;:&lt;/td&gt;
+&lt;td&gt;Typicality &amp;amp; AEP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;rate-distortion theorem&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;--------------------&lt;/td&gt;
+&lt;td&gt;---------------------------&lt;/td&gt;
+&lt;td&gt;--------------------------------&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Coding Methods&lt;/td&gt;
+&lt;td&gt;Symbol codes:&lt;/td&gt;
+&lt;td&gt;Hamming Codes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(algorithms)&lt;/td&gt;
+&lt;td&gt;Huffman Codes&lt;/td&gt;
+&lt;td&gt;BCH Codes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Stream codes:&lt;/td&gt;
+&lt;td&gt;Turbo Codes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Arithmetic Coding&lt;/td&gt;
+&lt;td&gt;Gallage Code(LDPC)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Lempel-Ziv-Welch&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;em&gt;maximum mutual information principle&lt;/em&gt; by Linsker(1988)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The synaptic connections of a multilayered neural network develop in such
+a way as to maximize the amount of information that is perserved when signals
+are transformed at each stage of the network, subject to certain constraints.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;perceptual system&lt;/em&gt; by Attneave(1954)&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A major function of the perceptual machinery is to strip away some of the reduncdancy
+of stimulation, to describe or encode information in a form more economical than that
+in which it impinges on the receptors.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;information&lt;/em&gt;, or the information gained after observing the event $X = p_k$ with probability $p_k$,
+$$
+I(p_k) = log(\frac{1}{p_k}) = -log(p_k)
+$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;entropy&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the average amount of information conveyed per message.
+$$
+H(X) = \mathbb{E}[I(x_k)]
+$$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;maximum-entropy principle&lt;/em&gt; by Jaynes(1957)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When an information is made on the basis of incomplete information,
+it should by drawn the probability distribution that maximizes the entropy,
+subject to the constraint on the distribution.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;by Shore and Johson(1980)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given the prior knowledge in the form of constraints,
+there is only one distribution satisfying these constraints that can be chosen by a procedure that
+satisfies the "consistency axioms"; this unique distribution is defined by maximizing entropy.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;mutual information&lt;/em&gt;
+$$
+I(\mathbf{X};\mathbf{Y}) = h(\mathbf{X}) - h(\mathbf{X}|\mathbf{Y})\\
+= h(\mathbf{Y}) - h(\mathbf{Y}|\mathbf{X})\\
+= h(\mathbf{X}) + h(\mathbf{X}) - h(\mathbf{X,Y})
+$$&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;&lt;a href="http://www.dc.uba.ar/materias/incc/teoricas/Attneave1954.pdf"&gt;some informational aspects of visual perception&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">songzw</dc:creator><pubDate>Mon, 16 Dec 2013 00:00:00 +0100</pubDate><guid>tag:tjsongzw.github.io,2013-12-16:posts/note/information-theory</guid></item></channel></rss>
